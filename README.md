@@ -8,7 +8,5 @@ This repository contains my daily Data Structures and Algorithms practice soluti
 - Prepare for coding interviews
 - Maintain consistency
 
-## Progress
-
 ## Languages
 - Java
