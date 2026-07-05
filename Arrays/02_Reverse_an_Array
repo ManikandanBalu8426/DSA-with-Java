@@ -1,0 +1,45 @@
+/**
+ * Problem: Reverse an Array
+ * Platform: Practice / Self
+ * Topic: Arrays, Two Pointers
+ * Day: 2
+ *
+ * Approach:
+ * - Initialize two pointers:
+ *   - left starts at the beginning of the array.
+ *   - right starts at the end of the array.
+ * - Swap the elements at the left and right pointers.
+ * - Move left forward and right backward.
+ * - Repeat while the left pointer is before the right pointer.
+ *
+ * Example:
+ * Input:  [1, 2, 3, 4, 5]
+ * Output: [5, 4, 3, 2, 1]
+ *
+ * Time Complexity: O(n)
+ * Space Complexity: O(1)
+ */
+
+public class ReverseArray {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+
+        int left = 0;
+        int right = arr.length - 1;
+        int temp;
+
+        while (left < right) {
+            temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+
+            left++;
+            right--;
+        }
+
+        System.out.print("Reversed Array: ");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
