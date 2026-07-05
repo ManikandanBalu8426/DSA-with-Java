@@ -3,6 +3,14 @@
  * Platform: LeetCode
  * Topic: Arrays
  * Day: 1
+ *
+ * Approach:
+ * - Use two nested loops.
+ * - Check every possible pair.
+ * - Return the indices if the sum equals the target.
+ *
+ * Time Complexity: O(n²)
+ * Space Complexity: O(1)
  */
 
 class Solution {
