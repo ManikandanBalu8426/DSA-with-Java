@@ -1,1 +1,49 @@
+/**
+ * Problem: Armstrong Number
+ * Platform: GeeksforGeeks
+ * Topic: Mathematics
+ * Difficulty: Easy
+ *
+ * Problem Statement:
+ * Given an integer n, determine whether it is an Armstrong number.
+ * An Armstrong number is a number that is equal to the sum of the cubes
+ * of its digits (for 3-digit numbers).
+ *
+ * Examples:
+ * Input: 153
+ * Output: true
+ *
+ * Input: 123
+ * Output: false
+ *
+ * Approach:
+ * - Store the original number.
+ * - Extract each digit using the modulus (%) operator.
+ * - Find the cube of each digit and add it to a running sum.
+ * - Remove the last digit by dividing the number by 10.
+ * - After processing all digits, compare the sum with the original number.
+ * - If both are equal, the number is an Armstrong number.
+ *
+ * Time Complexity: O(d)
+ *   where d is the number of digits in the number.
+ *
+ * Space Complexity: O(1)
+ */
 
+class Solution {
+    static boolean armstrongNumber(int n) {
+        int sum = 0;
+        int arm = n;
+
+        while (n != 0) {
+            int digit = n % 10;
+            sum += (digit * digit * digit);
+            n = n / 10;
+        }
+
+        if (sum == arm)
+            return true;
+        else
+            return false;
+    }
+}
