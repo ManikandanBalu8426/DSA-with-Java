@@ -1,0 +1,37 @@
+/**
+ * Problem: Missing in Array
+ * Platform: GeeksforGeeks
+ * Topic: Arrays
+ * Day: 4
+ *
+ * Approach:
+ * - Calculate the expected sum of numbers from 1 to n,
+ *   where n = arr.length + 1.
+ * - Calculate the sum of all elements present in the array.
+ * - Subtract the array sum from the expected sum.
+ * - The result is the missing number.
+ *
+ * Example:
+ * Input:  [1, 2, 3, 5]
+ * Output: 4
+ *
+ * Time Complexity: O(n)
+ * Auxiliary Space: O(1)
+ */
+
+class Solution {
+    int missingNum(int arr[]) {
+        int totalSum = 0;
+        int arraySum = 0;
+
+        for (int i = 1; i <= arr.length + 1; i++) {
+            totalSum += i;
+        }
+
+        for (int num : arr) {
+            arraySum += num;
+        }
+
+        return totalSum - arraySum;
+    }
+}
