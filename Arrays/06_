@@ -1,0 +1,29 @@
+/**
+ * Problem: Third Largest Element
+ * Platform: GeeksforGeeks
+ * Topic: Arrays, Sorting
+ * Day: 5
+ *
+ * Approach:
+ * - Sort the list in ascending order using Collections.sort().
+ * - If the list contains fewer than three elements, return -1.
+ * - Otherwise, return the element at index (size - 3),
+ *   which represents the third largest element.
+ *
+ * Time Complexity: O(n log n)
+ * Space Complexity: O(1) (Ignoring the space used by the sorting algorithm)
+ */
+
+import java.util.Collections;
+import java.util.List;
+
+class Solution {
+    public int thirdLargest(List<Integer> arr) {
+        Collections.sort(arr);
+
+        if (arr.size() < 3)
+            return -1;
+
+        return arr.get(arr.size() - 3);
+    }
+}
