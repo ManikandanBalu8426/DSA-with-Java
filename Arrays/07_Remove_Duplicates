@@ -1,0 +1,33 @@
+/**
+ * Problem: Remove Duplicates from Unsorted Array
+ * Platform: GeeksforGeeks
+ * Topic: Arrays, HashSet, LinkedHashSet
+ * Day: 5
+ *
+ * Approach:
+ * - Traverse the array using an enhanced for loop.
+ * - Add each element to a LinkedHashSet.
+ * - LinkedHashSet automatically removes duplicate elements
+ *   while preserving their insertion order.
+ * - Convert the LinkedHashSet into an ArrayList because
+ *   the method requires an ArrayList as the return type.
+ *
+ * Time Complexity: O(n) average
+ * Space Complexity: O(n)
+ */
+
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+
+class Solution {
+    static ArrayList<Integer> removeDuplicate(int arr[]) {
+        LinkedHashSet<Integer> nums = new LinkedHashSet<>();
+
+        for (int k : arr) {
+            nums.add(k);
+        }
+
+        ArrayList<Integer> list = new ArrayList<>(nums);
+        return list;
+    }
+}
